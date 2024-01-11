@@ -11,9 +11,14 @@ public class SpecialOffer {
         this.description = description;
         this.time = time;
         this.discount = discount;
+
+    }
+
+    double specialOffer(Product product) {
+        return product.price = product.price - (discount * product.price / 100);
     }
 
     void showInfo() {
-        System.out.println(description + " " + " " + time + " " + discount);
+        System.out.println(description + " " + time + " " + discount + "%");
     }
 }

@@ -2,8 +2,6 @@ package pl.javastart.task;
 
 public class Product {
     Category category;
-    SpecialOffer specialOffer;
-
     String name;
     int price;
     String description;

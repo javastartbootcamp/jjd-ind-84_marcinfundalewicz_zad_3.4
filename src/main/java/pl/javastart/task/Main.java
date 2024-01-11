@@ -3,14 +3,13 @@ package pl.javastart.task;
 public class Main {
 
     public static void main(String[] args) {
-
         Product product1 = new Product("Cola", 10, "Pyszna cola");
         product1.category = new Category("Napoje", "Dział napojów");
         product1.showInfo();
         product1.category.showInfo();
 
         Product product2 = new Product("Woda", 5, "Pyszna woda");
-        product2.category = new Category("Napoje", "Dział napojów");
+        product2.category = product1.category;
         product2.showInfo();
         product2.category.showInfo();
 
@@ -22,8 +21,9 @@ public class Main {
         Product product4 = new Product("Paluszki", 6, "Pyszne paluszki");
         product4.showInfo();
 
-        product4.specialOffer = new SpecialOffer("Wyjątkowa okazja", "od wtorku do niedzieli zniżka", 20);
-        product4.specialOffer.showInfo();
-
+        SpecialOffer specialOffer = new SpecialOffer("Wyjątkowa okazja na produkt 1 !!!", "Od wtorku do niedzieli zniżka", 20);
+        specialOffer.showInfo();
+        double discount = specialOffer.specialOffer(product1);
+        System.out.println("Cena po obniżce wynosi: " + discount);
     }
 }
